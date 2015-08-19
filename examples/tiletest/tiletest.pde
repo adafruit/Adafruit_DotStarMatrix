@@ -52,13 +52,16 @@
 // that matrix is at the top left.  The matrices use zig-zag line ordering.
 // There's only one row here, so it doesn't matter if we declare it in row
 // or column order.  The pixels expect BRG color data.
+// IMPORTANT: when using tiled matrices, cast the first two arguments to
+// (uint8_t) as shown here.  This avoids ambiguity between certain combos
+// of single/tiled hard/soft SPI.  Do NOT cast for single matrices.
 Adafruit_DotStarMatrix matrix = Adafruit_DotStarMatrix(
-  10, 8, 3, 1, DATAPIN, CLOCKPIN,
+  (uint8_t)10, (uint8_t)8, 3, 1, DATAPIN, CLOCKPIN,
   DS_TILE_TOP   + DS_TILE_LEFT   + DS_TILE_ROWS   + DS_TILE_PROGRESSIVE +
   DS_MATRIX_TOP + DS_MATRIX_LEFT + DS_MATRIX_ROWS + DS_MATRIX_ZIGZAG,
   DOTSTAR_BRG);
 //Adafruit_DotStarMatrix matrix = Adafruit_DotStarMatrix(
-//  10, 8, 3, 1,
+//  (uint8_t)10, (uint8_t)8, 3, 1,
 //  DS_TILE_TOP   + DS_TILE_LEFT   + DS_TILE_ROWS   + DS_TILE_PROGRESSIVE +
 //  DS_MATRIX_TOP + DS_MATRIX_LEFT + DS_MATRIX_ROWS + DS_MATRIX_ZIGZAG,
 //  DOTSTAR_BRG);
