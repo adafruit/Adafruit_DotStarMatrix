@@ -41,6 +41,10 @@
  #endif
 #endif
 
+#ifndef _swap_uint16_t
+#define _swap_uint16_t(a, b) { uint16_t t = a; a = b; b = t; }
+#endif
+
 // Constructor for single matrix w/hardware SPI:
 Adafruit_DotStarMatrix::Adafruit_DotStarMatrix(int w, int h,
   uint8_t matrixType, uint8_t ledType) : Adafruit_GFX(w, h),
@@ -151,7 +155,7 @@ void Adafruit_DotStarMatrix::drawPixel(int16_t x, int16_t y, uint16_t color) {
       if((type & DS_TILE_AXIS) == DS_TILE_ROWS) {
         majorScale = tilesX;
       } else {
-        swap(major, minor);
+        _swap_uint16_t(major, minor);
         majorScale = tilesY;
       }
 
@@ -188,7 +192,7 @@ void Adafruit_DotStarMatrix::drawPixel(int16_t x, int16_t y, uint16_t color) {
     if((type & DS_MATRIX_AXIS) == DS_MATRIX_ROWS) {
       majorScale = matrixWidth;
     } else {
-      swap(major, minor);
+      _swap_uint16_t(major, minor);
       majorScale = matrixHeight;
     }
 
