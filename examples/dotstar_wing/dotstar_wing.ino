@@ -1,5 +1,5 @@
 // Adafruit_DotStarMatrix example for single DotStar LED matrix.
-// Scrolls 'Howdy' across the matrix.
+// Scrolls 'Adafruit' across the matrix.
 
 #include <SPI.h>
 #include <Adafruit_GFX.h>
