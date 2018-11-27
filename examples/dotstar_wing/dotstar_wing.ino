@@ -13,13 +13,7 @@
 #elif defined(__AVR_ATmega328P__)
   #define DATAPIN    2
   #define CLOCKPIN   4
-#elif defined(ARDUINO_SAMD_FEATHER_M0)
-  #define DATAPIN    11
-  #define CLOCKPIN   13
-#elif defined(ARDUINO_AVR_FEATHER32U4)
-  #define DATAPIN    11
-  #define CLOCKPIN   13
-#elif defined(ARDUINO_FEATHER52)
+#elif defined(ARDUINO_FEATHER52832)
   #define DATAPIN    7
   #define CLOCKPIN   16
 #elif defined(TEENSYDUINO)
@@ -30,6 +24,9 @@
   #define CLOCKPIN   PB5
 #elif defined(ESP32)
   #define DATAPIN    27
+  #define CLOCKPIN   13
+#else // // 32u4, M0, M4, nrf52840 and 328p
+  #define DATAPIN    11
   #define CLOCKPIN   13
 #endif
 
