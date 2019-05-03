@@ -103,7 +103,7 @@ int pass = 0;
 void loop() {
   matrix.fillScreen(0);
   matrix.setCursor(x, 5);
-  for (byte i = 0; i < 9; i++) {
+  for (byte i = 0; i < strlen(adafruit); i++) {
     // set the color
     matrix.setTextColor(adaColors[i]);
     // write the letter
