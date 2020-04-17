@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['adafruit_5fdotstarmatrix',['Adafruit_DotStarMatrix',['../class_adafruit___dot_star_matrix.html#ae2c0d4b42a634179971952d7c989ec67',1,'Adafruit_DotStarMatrix::Adafruit_DotStarMatrix(int w, int h, uint8_t matrixType, uint8_t ledType)'],['../class_adafruit___dot_star_matrix.html#a6c51fff2d130ed94c729fe7b02f97b98',1,'Adafruit_DotStarMatrix::Adafruit_DotStarMatrix(int w, int h, uint8_t d, uint8_t c, uint8_t matrixType, uint8_t ledType)'],['../class_adafruit___dot_star_matrix.html#afff2b561fa273f0bfdb494d49ef76cd0',1,'Adafruit_DotStarMatrix::Adafruit_DotStarMatrix(uint8_t matrixW, uint8_t matrixH, uint8_t tX, uint8_t tY, uint8_t matrixType, uint8_t ledType)'],['../class_adafruit___dot_star_matrix.html#a7332971e0180aa8bdccbf30d00543ad0',1,'Adafruit_DotStarMatrix::Adafruit_DotStarMatrix(uint8_t matrixW, uint8_t matrixH, uint8_t tX, uint8_t tY, uint8_t d, uint8_t c, uint8_t matrixType, uint8_t ledType)']]]
+];
