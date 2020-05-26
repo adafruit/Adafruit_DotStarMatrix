@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['drawpixel',['drawPixel',['../class_adafruit___dot_star_matrix.html#a28e94a7f684a6632c467831377201dc8',1,'Adafruit_DotStarMatrix']]],
   ['ds_5fmatrix_5faxis',['DS_MATRIX_AXIS',['../_adafruit___dot_star_matrix_8h.html#ac4e8f5d307ec9357698c9aed89dbd020',1,'Adafruit_DotStarMatrix.h']]],
   ['ds_5fmatrix_5fbottom',['DS_MATRIX_BOTTOM',['../_adafruit___dot_star_matrix_8h.html#a7867c139cfdd8a729398a643ef210ec1',1,'Adafruit_DotStarMatrix.h']]],
   ['ds_5fmatrix_5fcolumns',['DS_MATRIX_COLUMNS',['../_adafruit___dot_star_matrix_8h.html#a62bf91b854c8b3383c56920e906430f0',1,'Adafruit_DotStarMatrix.h']]],

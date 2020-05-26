@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['drawpixel',['drawPixel',['../class_adafruit___dot_star_matrix.html#a28e94a7f684a6632c467831377201dc8',1,'Adafruit_DotStarMatrix']]]
+  ['color',['Color',['../class_adafruit___dot_star_matrix.html#a0bc00dc4e1e1d919081c89ab601fe370',1,'Adafruit_DotStarMatrix']]]
 ];
