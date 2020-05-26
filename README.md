@@ -1,5 +1,4 @@
-Adafruit_DotStarMatrix.
-=======================
+# Adafruit_DotStarMatrix. [![Build Status](https://github.com/adafruit/Adafruit_DotStarMatrix/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_DotStarMatrix/actions)
 
 Adafruit_GFX-compatible library for DotStar matrices and grids. Controls single and tiled DotStar matrices or grids assembled from DotStar LED strip. Requires Adafruit_DotStar and Adafruit_GFX libraries.
 
