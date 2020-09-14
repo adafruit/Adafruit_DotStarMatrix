@@ -25,6 +25,11 @@
 #elif defined(ESP32)
   #define DATAPIN    27
   #define CLOCKPIN   13
+#elif defined(PORTENTA_H7)
+  #define DATAPIN    A5	   // jumper must be placed from A3->A5
+  #define CLOCKPIN   A4
+  #define SERIAL_COUNTER_TIME_OUT 5000    // so serial port doesn't hang the board
+  #define SERIAL_CTR_TIME_OUT 5
 #else // // 32u4, M0, M4, nrf52840 and 328p
   #define DATAPIN    11
   #define CLOCKPIN   13
@@ -52,7 +57,7 @@
 //   DOTSTAR_BGR  Pixels are wired for BGR bitstream (APA102-2020 DotStars)
 
 Adafruit_DotStarMatrix matrix = Adafruit_DotStarMatrix(
-                                  12, 6, DATAPIN, CLOCKPIN,
+                                  12, 7, DATAPIN, CLOCKPIN,		// MKR-RGB Shield
                                   DS_MATRIX_BOTTOM     + DS_MATRIX_LEFT +
                                   DS_MATRIX_ROWS + DS_MATRIX_PROGRESSIVE,
                                   DOTSTAR_BGR);
@@ -73,15 +78,32 @@ const uint16_t adaColors[] = {
   matrix.Color(255, 220, 0)  //! orange/yellow
 };
 
+#ifndef  PORTENTA_H7
 char adafruit[] = "ADAFRUIT!";
+#else
+char adafruit[] = "portentah7";
+#endif
 
 void setup() {
-  Serial.begin(115200);
- 
+	unsigned int counter_main = 0;
+	
+	Serial.begin(115200);
+	
+  do {
+	  counter_main++;
+  } while ( !Serial && ( counter_main < SERIAL_COUNTER_TIME_OUT) );
+  
   // uncomment to have wait
   //while (!Serial) delay(500); 
-
+#ifndef  PORTENTA_H7
   Serial.println("\nDotstar Matrix Wing");
+#else
+  pinMode(A4, OUTPUT);
+  pinMode(A5, OUTPUT);  
+  delay(2500);
+  Serial.println("\nMKR-RGB on H7");
+#endif
+  
   matrix.begin();
   matrix.setFont(&TomThumb);
   matrix.setTextWrap(false);
