@@ -56,11 +56,19 @@
 //   DOTSTAR_GBR  Pixels are wired for GBR bitstream (some older DotStars)
 //   DOTSTAR_BGR  Pixels are wired for BGR bitstream (APA102-2020 DotStars)
 
+#ifndef PORTENTA_H7
 Adafruit_DotStarMatrix matrix = Adafruit_DotStarMatrix(
-                                  12, 7, DATAPIN, CLOCKPIN,		// MKR-RGB Shield
+                                  12, 6, DATAPIN, CLOCKPIN,		
                                   DS_MATRIX_BOTTOM     + DS_MATRIX_LEFT +
                                   DS_MATRIX_ROWS + DS_MATRIX_PROGRESSIVE,
-                                  DOTSTAR_BGR);
+				  DOTSTAR_BGR);
+#else
+Adafruit_DotStarMatrix matrix = Adafruit_DotStarMatrix(
+				 12, 7, DATAPIN, CLOCKPIN,		// MKR-RGB Shield
+				 DS_MATRIX_BOTTOM     + DS_MATRIX_LEFT +
+				 DS_MATRIX_ROWS + DS_MATRIX_PROGRESSIVE,
+				 DOTSTAR_BGR);
+#endif
 
 const uint16_t primaryColors[] = {
   matrix.Color(255, 0, 0), matrix.Color(0, 255, 0), matrix.Color(0, 0, 255)
@@ -85,14 +93,15 @@ char adafruit[] = "portentah7";
 #endif
 
 void setup() {
+#ifdef  PORTENTA_H7	
 	unsigned int counter_main = 0;
-	
+#endif	
 	Serial.begin(115200);
-	
+#ifdef  PORTENTA_H7		
   do {
 	  counter_main++;
   } while ( !Serial && ( counter_main < SERIAL_COUNTER_TIME_OUT) );
-  
+#endif  
   // uncomment to have wait
   //while (!Serial) delay(500); 
 #ifndef  PORTENTA_H7
