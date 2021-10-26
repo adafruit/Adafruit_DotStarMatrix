@@ -22,10 +22,10 @@
 #elif defined(ARDUINO_ARCH_WICED)
   #define DATAPIN    PA4
   #define CLOCKPIN   PB5
-#elif defined(ESP32)
+#elif defined(ESP32) && !defined(ARDUINO_ADAFRUIT_FEATHER_ESP32S2)
   #define DATAPIN    27
   #define CLOCKPIN   13
-#else // // 32u4, M0, M4, nrf52840 and 328p
+#else // // 32u4, M0, M4, esp32-s2, nrf52840 and 328p
   #define DATAPIN    11
   #define CLOCKPIN   13
 #endif
