@@ -10,6 +10,9 @@
 #if defined(ESP8266)
   #define DATAPIN    13
   #define CLOCKPIN   14
+#elif defined(ARDUINO_ADAFRUIT_FEATHER_ESP32C6)
+  #define DATAPIN    0
+  #define CLOCKPIN   15
 #elif defined(__AVR_ATmega328P__)
   #define DATAPIN    2
   #define CLOCKPIN   4
